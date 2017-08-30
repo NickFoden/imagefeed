@@ -10,6 +10,8 @@ class Images extends Component {
             const cloudName = 'proofer'
             const url = 'https://api.cloudinary.com/v1_1'+cloudName+'/image/upload'
 
+            const timestamp = Date.now()/1000
+            const uploadPreset = 'on6jfv7m'
 
         }
     render(){

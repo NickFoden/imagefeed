@@ -22470,6 +22470,9 @@ var Images = function (_Component) {
 
             var cloudName = 'proofer';
             var url = 'https://api.cloudinary.com/v1_1' + cloudName + '/image/upload';
+
+            var timestamp = Date.now() / 1000;
+            var uploadPreset = 'on6jfv7m';
         }
     }, {
         key: 'render',
