@@ -22,6 +22,4 @@ class Images extends Component {
     }
 }
 
-/*https://youtu.be/WOTFmPkWbxo?t=52m */
-
 export default Images
