@@ -22477,7 +22477,7 @@ var Images = function (_Component) {
             var image = files[0];
 
             var cloudName = 'proofer';
-            var url = 'https://api.cloudinary.com/v1_1' + cloudName + '/image/upload';
+            var url = 'https://api.cloudinary.com/v1_1' + cloudName + '/upload';
 
             var timestamp = Date.now() / 1000;
             var uploadPreset = 'on6jfv7m';
