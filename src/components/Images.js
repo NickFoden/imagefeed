@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Dropzone from 'react-dropzone'
 import sha1 from 'sha1'
+import superagent from 'superagent'
 
 class Images extends Component {
 
@@ -17,6 +18,27 @@ class Images extends Component {
             const paramStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+'dW9zgguPfWSrOwP8mQ2AyCMYu30'
             const signature = sha1(paramStr)
 
+            const params = {
+                'api_key': '821318977471469',
+                'timestamp': timestamp,
+                'upload_preset': uploadPreset,
+                'signature': signature
+            }
+        
+            let uploadRequest = superagent.post(url)
+            uploadRequest.attach('file', image)
+
+            Object.keys(params).forEach((key) => {
+                uploadRequest.field(key, params[key])
+            })
+
+            uploadRequest.end((err, resp) => {
+                if (err){
+                    alert(err)
+                    return
+                }
+                console.log('UPLOAD COMPLETE: '+JSON.stringify(resp.body))
+            })
     }
     
     render(){
