@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Dropzone from 'react-dropzone'
+import sha1 from 'sha1'
 
 class Images extends Component {
 
@@ -13,7 +14,11 @@ class Images extends Component {
             const timestamp = Date.now()/1000
             const uploadPreset = 'on6jfv7m'
 
-        }
+            const paramStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+'dW9zgguPfWSrOwP8mQ2AyCMYu30'
+            const signature = sha1(paramStr)
+
+    }
+    
     render(){
         return (
             <div>
